@@ -83,6 +83,16 @@ html {
   font-size: 3.25rem;
 }
 
+.sidebar-certificates ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-certificates ul li {
+  width: 50%;
+  float: left;
+}
+
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
