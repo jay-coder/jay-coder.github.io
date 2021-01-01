@@ -16,10 +16,10 @@ I faced 2 challenges when I tried to consume SPO list restful API.
     I googled a few blogs, most of them were written before 2019, which means they were using Azure Functions v1.0 (.NET Framework instead of .NET Core), so that they can add "Microsoft.SharePointOnline.CSOM" nuget package without any problems.
 
 
-    However, when I added that package into my project, I received this incompatible warning: 
-    <figure class="wp-block-image size-large"><img src="http://jaycoder.net/wp-content/uploads/2019/12/image.png" alt="" class="wp-image-317"/></figure>
+    However, when I added that package into my project, I received this incompatible warning:
+    <img src='{{ "/public/assets/img/spo_nuget_package.png" | relative_url }}' alt="CSOM Nuget Package" />    
 
-    Someone mentioned in Stack Overflow that "TTCUE.NetCore.SharepointOnline.CSOM.16.1.8029.1200" package works well on .NET Core application. It is a wrapper of Microsoft dlls that copying from Microsoft.SharePointOnline.CSOM package\lib\netcore45, I grabbed the latest dlls from Microsoft.SharePointOnline.CSOM version 16.1.19515.12000 to my lib folder and added references from there. Then the warning disappeared.
+    Someone mentioned in Stack Overflow that <strong>TTCUE.NetCore.SharepointOnline.CSOM.16.1.8029.1200</strong> package works well on .NET Core application. It is a wrapper of Microsoft dlls that copying from Microsoft.SharePointOnline.CSOM package\lib\netcore45, I grabbed the latest dlls from Microsoft.SharePointOnline.CSOM version 16.1.19515.12000 to my lib folder and added references from there. Then the warning disappeared.
 
 1. How to authenticate?
 
