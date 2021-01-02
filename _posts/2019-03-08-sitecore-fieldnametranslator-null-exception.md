@@ -6,7 +6,7 @@ title: Sitecore - fieldNameTranslator null exception
 After finishing the secondment to innovation team, I had to re-configure my local Sitecore environment and upgrade SXA from 1.3 to 1.7 which had been done by others when I was away.
 
 After getting the latest code from VSTS and restoring the database, I got this welcome message:
-{% highlight csharp %}
+```
 Server Error in '/' Application. 
 
 A route named 'MS_attributerouteWebApi' is already in the route collection. Route names must be unique. Parameter name: name Description: An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
@@ -35,13 +35,13 @@ System.Web.Hosting.PipelineRuntime.InitializeApplication(IntPtr appContext) +369
 [HttpException (0x80004005): A route named 'MS_attributerouteWebApi' is already in the route collection. Route names must be unique. Parameter name: name]
 System.Web.HttpRuntime.FirstRequestInit(HttpContext context) +534
 System.Web.HttpRuntime.EnsureFirstRequestInit(HttpContext context) +111 System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context) +718
-{% endhighlight %}
+```
 
 Luckily, I got WinMerge. After comparing the working version, I realized someone accidentally created a <strong>global.asax</strong> and overwrote the default one.
 
 Then I managed to login by deleting that asax file. However, when I clicked on tree nodes in Content Editor, I got exception again:
 
-{% highlight csharp %}
+```
 Server Error in '/' Application.
 
 Value cannot be null.
@@ -91,10 +91,10 @@ Parameter name: fieldNameTranslator]
    Sitecore.Shell.Applications.ContentManager.ContentEditorPage.OnPreRender(EventArgs e) +143
    System.Web.UI.Control.PreRenderRecursiveInternal() +162
    System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +6875
-{% endhighlight %}
+```
 
 And some warnings from crawling log:
-{% highlight csharp %}
+```
 18828 22:59:24 WARN  Failed to initialize 'sitecore_marketing_asset_index_master' index. Registering the index for re-initialization once connection to SOLR becomes available ...
 18828 22:59:24 WARN  DONE
 18828 22:59:24 WARN  Failed to initialize 'sitecore_marketing_asset_index_web' index. Registering the index for re-initialization once connection to SOLR becomes available ...
@@ -117,7 +117,7 @@ And some warnings from crawling log:
 18828 22:59:24 WARN  DONE
 18828 22:59:24 WARN  Failed to initialize 'social_messages_web' index. Registering the index for re-initialization once connection to SOLR becomes available ...
 18828 22:59:24 WARN  DONE
-{% endhighlight %}
+```
 
 It's because I didn't create those indexes yet:
 * sitecore_marketing_asset_index_master

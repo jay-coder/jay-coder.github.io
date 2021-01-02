@@ -9,7 +9,7 @@ title: Webhook SharePoint Online List with Azure Functions v2.0
 
 In order to register a webhook on SPO list, I need to subscribe from that list.  For example: 
 
-{% highlight csharp %}
+```csharp
 POST /_api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions
 Accept: application/json
 Content-Type: application/json
@@ -19,7 +19,7 @@ Content-Type: application/json
   "notificationUrl": "https://91e383a5.ngrok.io/api/webhook/handlerequest",
   "expirationDateTime": "2016-04-27T16:17:57+00:00"
 }
-{% endhighlight %}
+```
 
 How can I trigger this post without having the access token? I don't have permission to get the details of AAD,  so it's impossible to acquire access token and attach to the http post request using Postman.
 
@@ -29,9 +29,9 @@ I got anther obstacle when I tried to add one simple hook. It gave me this error
 
 I just updated my code with one more "if" and return the validation token at the beginning of function.
 
-{% highlight csharp %} 
+```csharp
 [FunctionName("SharePointWebhook")]
-public async Task&lt;IActionResult> SharePointWebhook(
+public async Task<IActionResult> SharePointWebhook(
     [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
     ILogger log)
 {
@@ -43,6 +43,6 @@ public async Task&lt;IActionResult> SharePointWebhook(
     }
     ......            
 }
-{% endhighlight %}
+```
 
 Code at Github: [https://github.com/jay-coder/AZFuncSPO](https://github.com/jay-coder/AZFuncSPO)
