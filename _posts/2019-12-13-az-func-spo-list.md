@@ -27,7 +27,7 @@ I faced 2 challenges when I tried to consume SPO list restful API.
 
     The basic authentication of SharePoint is much uglier than what I thought, it's cookie based not token. I have to call <em>GetAuthenticationCookie</em> method to generate cookie from Microsoft.SharePoint.Client.dll (the one in net45 folder - not compatible with core) as Microsoft.SharePoint.Client.Portal.dll hasn't implemented such function yet. I have to de-compile the  Microsoft.SharePoint.Client.dll and copy them to my own classes.
 
-    {% highlight csharp %}
+    ```csharp
     // Startup.cs - manage HttpClient by Polly
     var authBuilder = new SharePointAuthenticationBuilder(config);
     builder.Services.AddHttpClient("SharePoint").ConfigureHttpMessageHandlerBuilder((b) =>
@@ -35,10 +35,9 @@ I faced 2 challenges when I tried to consume SPO list restful API.
         )
         .SetHandlerLifetime(TimeSpan.FromMinutes(5))
         .AddPolicyHandler(GetRetryPolicy());
-    {% endhighlight %}
+    ```
 
-
-    {% highlight csharp %}
+    ```csharp
     // SharePointAuthenticationBuilder.cs - set cookies to HttpClient
     public void BuildHttpMessageHandler(HttpMessageHandlerBuilder builder)
     {
@@ -53,7 +52,7 @@ I faced 2 challenges when I tried to consume SPO list restful API.
         builder.PrimaryHandler = handler;
         builder.Build();
     }
-    {% endhighlight %}
+    ```
 
 These are the necessary dlls:
 * Microsoft.SharePoint.Client.Runtime.Portable

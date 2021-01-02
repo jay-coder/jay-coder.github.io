@@ -13,7 +13,7 @@ After discussing with our SharePoint expert, he could build a web part in ShareP
 
 Fortunately, Microsoft supplied the portal dll for taxonomy in netcore45, I just need to include those 2 dlls: Microsoft.SharePoint.Client.Taxonomy.Portable.dll Microsoft.SharePoint.Client.Portable.dll
 
-{% highlight csharp %}
+```csharp
 // SharePointTermStore.cs - get Terms by ClientContext
 using (var ctx = new ClientContext(collectionUrl))
 {
@@ -30,7 +30,7 @@ using (var ctx = new ClientContext(collectionUrl))
     await ctx.ExecuteQueryAsync();
     _termStore = termStore;
 }
-{% endhighlight %}
+```
 
 At last, I managed to get the correct descendants of Term Store, even with "Custom Sort Order" enabled.
 
