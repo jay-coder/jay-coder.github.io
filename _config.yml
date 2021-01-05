@@ -23,4 +23,8 @@ version:          2.1.0
 github:
   repo:           https://github.com/jay-coder
 
-plugins: [jekyll-paginate, jekyll-gist]
+google:
+  tag_manager:
+    container_id: GTM-5FDRV8L
+
+plugins: [jekyll-paginate, jekyll-gist, jekyll-google-tag-manager]
