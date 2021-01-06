@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Consume SharePoint Online Term Store from Azure Functions v2.0
+redirect_from:
+  - /az-func-spo-termstore/
 ---
 
 * [Consume SharePoint Online List from Azure Functions v2.0](/2019/12/13/az-func-spo-list)

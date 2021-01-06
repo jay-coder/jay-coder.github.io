@@ -1,6 +1,8 @@
 ---
 layout: post
 title: MusicStore – Part5 – Authorization
+redirect_from:
+  - /musicstore-5/
 ---
 
 Let's authorize users by their types - ONLY "Musician" can access to Values API.

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Sitecore - fieldNameTranslator null exception
+redirect_from:
+  - /sitecore-fieldnametranslator-null-exception/
 ---
 
 After finishing the secondment to innovation team, I had to re-configure my local Sitecore environment and upgrade SXA from 1.3 to 1.7 which had been done by others when I was away.

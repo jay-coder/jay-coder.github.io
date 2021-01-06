@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Consume SharePoint Online List from Azure Functions v2.0
+redirect_from:
+  - /az-func-spo-list/
 ---
 
 First of all, I am not a SharePoint expert, if there is any incorrect information, please let me know.

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: MusicStore - Part4 - External Login
+redirect_from:
+  - /musicstore-4/
 ---
 
 Let's enable the external login, so that Microsoft and LinkedIn users don't need to sign up in Music Store.
