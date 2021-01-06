@@ -27,4 +27,4 @@ google:
   tag_manager:
     container_id: GTM-5FDRV8L
 
-plugins: [jekyll-paginate, jekyll-gist, jekyll-google-tag-manager]
+plugins: [jekyll-paginate, jekyll-gist]
