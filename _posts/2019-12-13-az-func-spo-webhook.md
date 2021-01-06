@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Webhook SharePoint Online List with Azure Functions v2.0
+redirect_from:
+  - /az-func-spo-webhook/
 ---
 
 * [Consume SharePoint Online List from Azure Functions v2.0](/2019/12/13/az-func-spo-list)

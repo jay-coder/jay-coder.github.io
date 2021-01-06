@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Sitecore - SXA1.7 Indexing for CM
+redirect_from:
+  - /sitecore-sxa-indexing/
 ---
 
 I recently encountered an issue that the CM site always retrieve data from production Solr (sitecore_sxa_web_index). Which means our marketing managers could not verify their changes on authoring environment until they publish contents to production. 

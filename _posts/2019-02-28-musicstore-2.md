@@ -1,6 +1,8 @@
 ---
 layout: post
 title: MusicStore - Part2 - Link three parties
+redirect_from:
+  - /musicstore-2/
 ---
 
 ## Register Client in IdentityServer

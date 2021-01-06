@@ -1,6 +1,8 @@
 ---
 layout: post
 title: MusicStore - Part3 - EF to SQL Server
+redirect_from:
+  - /musicstore-3/
 ---
 
 In [MusicStore - Part1 - Init](/2019/02/26/musicstore-1/), in memory resources and test users had been used for test purpose.

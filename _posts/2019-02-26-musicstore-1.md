@@ -1,6 +1,8 @@
 ---
 layout: post
 title: MusicStore - Part1 - Init
+redirect_from:
+  - /musicstore-1/
 ---
 
 Let's start building a platform where musicians can sell their albums online.
