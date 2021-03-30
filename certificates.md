@@ -16,3 +16,7 @@ title: Certificates
 ## Azure DevOps Engineer - AZ 400
 
 * [AZ-400: Designing and Implementing Microsoft DevOps Solutions](/2020/06/20/az-400/)
+
+## Azure Security Engineer - AZ 500
+
+* [AZ-500: Microsoft Azure Security Technologies](/2020/11/20/az-500/)
