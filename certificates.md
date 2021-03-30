@@ -12,6 +12,7 @@ title: Certificates
 
 * [AZ-300: Microsoft Azure Architect Technologies](/2019/05/27/az-300/)
 * [AZ-301: Microsoft Azure Architect Design](/2019/08/01/az-301/)
+* [Renew Solutions Architect Certificate](/2021/03/20/renew-sa/)
 
 ## Azure DevOps Engineer - AZ 400
 
