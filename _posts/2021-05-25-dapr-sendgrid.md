@@ -7,39 +7,39 @@ title: 'Dapr - SendGrid'
 
   1. Create a new .NET Core WebAPI project
   ```
-    dotnet new webapi -n HTTPSendGrid
+  dotnet new webapi -n HTTPSendGrid
   ```
 
   2. Install Dapr nuget package
   ```
-    dotnet add package Dapr.AspNetCore
+  dotnet add package Dapr.AspNetCore
   ```
 
   3. Append AddDapr() in ConfigureServices method of Startup.cs
   ```csharp
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllers().AddDapr();
-        services.AddSwaggerGen(c =>
-        {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "HTTPSendGrid", Version = "v1" });
-        });
-    }
+  public void ConfigureServices(IServiceCollection services)
+  {
+      services.AddControllers().AddDapr();
+      services.AddSwaggerGen(c =>
+      {
+          c.SwaggerDoc("v1", new OpenApiInfo { Title = "HTTPSendGrid", Version = "v1" });
+      });
+  }
   ```
 
   4. Create a yaml file in components folder
   ```
-    apiVersion: dapr.io/v1alpha1
-    kind: Component
+  apiVersion: dapr.io/v1alpha1
+  kind: Component
+  metadata:
+    name: sendgrid
+    namespace: default
+  spec:
+    type: bindings.twilio.sendgrid
+    version: v1
     metadata:
-      name: sendgrid
-      namespace: default
-    spec:
-      type: bindings.twilio.sendgrid
-      version: v1
-      metadata:
-      - name: apiKey
-        value: "YOUR_SENDGRID_KEY"
+    - name: apiKey
+      value: YOUR_SENDGRID_KEY
   ```
   <p class="message">NOTE: Dapr is initialized to <strong>%USERPROFILE%\.dapr\</strong></p>
 
@@ -110,10 +110,9 @@ title: 'Dapr - SendGrid'
   ```
     dapr run --app-id emailservice --components-path ./components --dapr-http-port 3500 --app-port 5001 --app-ssl -- dotnet run
   ```
-  <img src='{{ "/public/assets/img/dapr_run_cmd.png" | relative_url }}' alt="Dapr Run Command" />
+  <img src='{{ "/public/assets/img/dapr_run_command.png" | relative_url }}' alt="Dapr Run Command" />
 
   7. Invoke the service via curl
-
   ```bash
     curl --location --request POST 'http://localhost:3500/v1.0/invoke/emailservice/method/email/httpsend' \
     --header 'Content-Type: application/json' \

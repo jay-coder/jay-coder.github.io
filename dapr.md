@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduce Dapr
+title: Dapr
 ---
 
 ## What is Dapr?
