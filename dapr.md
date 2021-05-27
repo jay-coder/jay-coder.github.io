@@ -19,6 +19,5 @@ title: Dapr
 
   [https://docs.dapr.io/reference/components-reference/supported-bindings/](https://docs.dapr.io/reference/components-reference/supported-bindings/)
  
-  ### Generic
-   
-   * [Twilio SendGrid](/2021/05/25/dapr-sendgrid/)
+### Generic 
+  * [Twilio SendGrid](/2021/05/25/dapr-sendgrid/)
