@@ -22,12 +22,18 @@ title: Dapr
 ### Generic 
   * [Twilio SendGrid](/2021/05/25/dapr-sendgrid/)
 
+### Pub Sub 
+  * [Redis](/2021/05/28/dapr-pubsub-redis/)
+
 ## Tips
-  * Make sure those containers are running if Dapr is hosted locally
+  * Make sure those containers are running if Dapr is Self-Hosted
     - openzipkin/zipkin
     - daprio/dapr
     - redis
     
     Without those containers, "redis" will not be available for state or pubsub.
     By default, "Dapr Init" will download those images and run them in docker.
-   
+   * Check Dapr logs in Kubernetes container
+```
+kubectl logs [container-name] daprd
+```
